@@ -35,9 +35,7 @@ const formulario = document.querySelector("form");
 const campoNome = document.getElementById("nome");
 const campoMatricula = document.getElementById("matricula");
 
-formulario.addEventListener("submit", async function (evento) {
-
-    evento.preventDefault();
+formulario.addEventListener("submit", function (evento) {
 
     const nome = campoNome.value.trim();
     const matricula = campoMatricula.value.trim();
@@ -50,14 +48,15 @@ formulario.addEventListener("submit", async function (evento) {
     const vereador = document.getElementById("vereador");
     const categoria = document.getElementById("categoria");
     const descricao = document.getElementById("descricao");
-    const anexo = document.getElementById("anexo");
 
 
     // =========================
-    // VALIDAÇÕES
+    // VALIDAÇÃO DO SERVIDOR
     // =========================
 
     if (nome === "" && matricula === "") {
+
+        evento.preventDefault();
 
         alert("Informe o nome ou a matrícula para continuar.");
 
@@ -67,10 +66,16 @@ formulario.addEventListener("submit", async function (evento) {
     }
 
 
+    // =========================
+    // VALIDAÇÃO DA UNIDADE
+    // =========================
+
     if (
         tipoUnidade === "departamento" &&
         departamento.value === ""
     ) {
+
+        evento.preventDefault();
 
         alert("Selecione o departamento ou setor.");
 
@@ -80,10 +85,16 @@ formulario.addEventListener("submit", async function (evento) {
     }
 
 
+    // =========================
+    // VALIDAÇÃO DO GABINETE
+    // =========================
+
     if (
         tipoUnidade === "gabinete" &&
         vereador.value.trim() === ""
     ) {
+
+        evento.preventDefault();
 
         alert("Informe o nome do vereador.");
 
@@ -93,7 +104,13 @@ formulario.addEventListener("submit", async function (evento) {
     }
 
 
+    // =========================
+    // VALIDAÇÃO DA CATEGORIA
+    // =========================
+
     if (categoria.value === "") {
+
+        evento.preventDefault();
 
         alert("Selecione o tipo de problema ou solicitação.");
 
@@ -103,119 +120,19 @@ formulario.addEventListener("submit", async function (evento) {
     }
 
 
+    // =========================
+    // VALIDAÇÃO DA DESCRIÇÃO
+    // =========================
+
     if (descricao.value.trim() === "") {
+
+        evento.preventDefault();
 
         alert("Descreva o problema ou a solicitação.");
 
         descricao.focus();
 
         return;
-    }
-
-
-    // =========================
-    // DADOS DO CHAMADO
-    // =========================
-
-    const dados = {
-
-        nome: nome,
-
-        matricula: matricula,
-
-        tipoUnidade:
-            tipoUnidade === "departamento"
-                ? "Departamento"
-                : "Gabinete",
-
-        departamento:
-            tipoUnidade === "departamento"
-                ? departamento.value
-                : "",
-
-        vereador:
-            tipoUnidade === "gabinete"
-                ? vereador.value.trim()
-                : "",
-
-        categoria:
-            categoria.options[categoria.selectedIndex].text,
-
-        descricao:
-            descricao.value.trim(),
-
-        anexo: ""
-
-    };
-
-
-    // =========================
-    // ENVIO
-    // =========================
-
-    const urlWebApp =
-        "https://script.google.com/macros/s/AKfycbzeHsxMdHv2oY445JWaICQ7o3w9qMmTwJjkvNecWOa0qeoQhSqMTFcN-7IlliAIhTGY-g/exec";
-
-
-    const botao = document.querySelector(".btn-enviar");
-
-    botao.disabled = true;
-
-    botao.textContent = "Enviando...";
-
-
-    try {
-
-        const resposta = await fetch(urlWebApp, {
-
-            method: "POST",
-
-            headers: {
-                "Content-Type": "text/plain;charset=utf-8"
-            },
-
-            body: JSON.stringify(dados)
-
-        });
-
-
-        const resultado = await resposta.json();
-
-
-        if (!resultado.sucesso) {
-
-            throw new Error(
-                resultado.erro || "Não foi possível registrar o chamado."
-            );
-
-        }
-
-
-        alert(
-            "Chamado registrado com sucesso!\n\n" +
-            "Seu protocolo é: " +
-            resultado.protocolo
-        );
-
-
-        formulario.reset();
-
-
-    } catch (erro) {
-
-        console.error(erro);
-
-        alert(
-            "Não foi possível registrar o chamado.\n\n" +
-            "Tente novamente ou procure a TI."
-        );
-
-    } finally {
-
-        botao.disabled = false;
-
-        botao.textContent = "Enviar Chamado";
-
     }
 
 });

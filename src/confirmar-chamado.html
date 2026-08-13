@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chamado registrado - SIGATI-CMM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>Sistema Integrado de Gestão de Atendimento de TI</p>
+
+</header>
+
+<main>
+
+    <section class="confirmacao">
+
+        <div class="icone-sucesso">
+            ✓
+        </div>
+
+        <h2>Chamado registrado com sucesso!</h2>
+
+        <p>
+            Seu chamado foi encaminhado para a
+            Tecnologia da Informação.
+        </p>
+
+        <p>
+            Seu protocolo é:
+        </p>
+
+        <div id="protocolo" class="numero-protocolo">
+            Carregando...
+        </div>
+
+        <p class="orientacao">
+            Guarde este número para consultar
+            posteriormente o andamento do atendimento.
+        </p>
+
+        <div class="botoes-confirmacao">
+
+            <a
+                href="abrir-chamado.html"
+                class="btn-enviar">
+                Abrir outro chamado
+            </a>
+
+            <a
+                href="index.html"
+                class="btn-secundario">
+                Voltar para o início
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+
+    const parametros = new URLSearchParams(
+        window.location.search
+    );
+
+    const protocolo =
+        parametros.get("protocolo");
+
+    const campoProtocolo =
+        document.getElementById("protocolo");
+
+    if (protocolo) {
+
+        campoProtocolo.textContent =
+            protocolo;
+
+    } else {
+
+        campoProtocolo.textContent =
+            "Protocolo não informado.";
+
+    }
+
+</script>
+
+</body>
+
+</html>
