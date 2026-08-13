@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abrir Chamado</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>Sistema Integrado de Gestão de Atendimento de TI</p>
+
+</header>
+
+<main>
+
+<h2>Abertura de Chamado</h2>
+
+<form
+    id="formChamado"
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbzeHsxMdHv2oY445JWaICQ7o3w9qMmTwJjkvNecWOa0qeoQhSqMTFcN-7IlliAIhTGY-g/exec">
+
+   <label for="nome">
+    Nome do servidor
+</label>
+
+<p class="ajuda">
+    Informe pelo menos o nome ou a matrícula.
+</p>
+
+<input
+    type="text"
+    id="nome"
+    name="nome"
+    placeholder="Digite seu nome completo">
+
+<label for="matricula">
+    Matrícula
+</label>
+
+<p class="ajuda">
+    Informe pelo menos o nome ou a matrícula.
+</p>
+
+<input
+    type="text"
+    id="matricula"
+    name="matricula"
+    placeholder="Digite sua matrícula">
+
+<label>Tipo de Unidade</label>
+
+<div class="radio-group">
+
+    <label>
+        <input type="radio" name="tipoUnidade" value="departamento" checked>
+        Departamento / Setor
+    </label>
+
+    <label>
+        <input type="radio" name="tipoUnidade" value="gabinete">
+        Gabinete de Vereador
+    </label>
+
+</div>
+
+<div id="campoDepartamento">
+
+    <label for="departamento">Departamento / Setor</label>
+
+    <select id="departamento" name="departamento">
+
+        <option value="">Selecione seu departamento ou setor</option>
+
+        <option value="CONTR">Controladoria - CONTR</option>
+        <option value="DEAD">Departamento Administrativo - DEAD</option>
+        <option value="DELEG">Departamento Legislativo - DELEG</option>
+        <option value="DEP">Departamento Pessoal - DEP</option>
+        <option value="DIGER">Diretoria Geral - DIGER</option>
+        <option value="OUVPAR">Ouvidoria Parlamentar - OUVPAR</option>
+        <option value="PROJUR">Procuradoria Jurídica - PROJUR</option>
+        <option value="SERP">Setor de Recepção e Protocolo - SERP</option>
+        <option value="SEAL">Setor de Almoxarifado - SEAL</option>
+        <option value="SEARQ">Setor de Arquivo - SEARQ</option>
+        <option value="SECOM">Setor de Comunicação - SECOM</option>
+        <option value="SELICIT">Setor de Licitação - SELICIT</option>
+        <option value="SEPAT">Setor de Patrimônio - SEPAT</option>
+        <option value="SSDP">Setor de Serviço de Desempenho Parlamentar - SSDP</option>
+        <option value="SETI">Setor de Tecnologia da Informação - SETI</option>
+        <option value="SEFIC">Setor Financeiro e Contábil - SEFIC</option>
+
+    </select>
+
+</div>
+
+<div id="campoGabinete" style="display: none;">
+
+    <label for="vereador">Gabinete de qual vereador?</label>
+
+    <input
+        type="text"
+        id="vereador"
+        name="vereador"
+        placeholder="Digite o nome do vereador">
+
+</div>
+
+<label for="categoria">Qual é o problema?</label>
+
+<select id="categoria" name="categoria">
+
+    <option value="">Selecione o tipo de problema</option>
+
+    <option value="computador">
+        Problema no computador
+    </option>
+
+    <option value="impressora">
+        Problema na impressora
+    </option>
+
+    <option value="toner">
+        Troca de toner
+    </option>
+
+    <option value="internet">
+        Problema na internet
+    </option>
+
+    <option value="sistema">
+        Problema em algum sistema
+    </option>
+
+    <option value="outro">
+        Outro
+    </option>
+
+</select>
+
+<label for="descricao">Descrição da solicitação</label>
+
+<textarea
+    id="descricao"
+    name="descricao"
+    placeholder="Descreva o que está acontecendo ou o que você precisa solicitar."
+></textarea>
+
+<label for="anexo">Anexar imagem (opcional)</label>
+
+<input
+    type="file"
+    id="anexo"
+    name="anexo"
+    accept="image/*">
+
+<button type="submit" class="btn-enviar">
+    Enviar Chamado
+</button>
+
+</form>
+
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
