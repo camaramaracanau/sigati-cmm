@@ -55,6 +55,22 @@ button:hover {
     background: #084c85;
 }
 
+.botao {
+    display: inline-block;
+    background: #0B5FA5;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao:hover {
+    background: #084c85;
+}
+
 /* ===== AVISOS ===== */
 
 .avisos {
@@ -157,4 +173,126 @@ input[type="file"] {
     margin-top: 6px;
     font-size: 13px;
     color: #666;
+}
+
+/* =========================
+   TELA DE CONFIRMAÇÃO
+   ========================= */
+
+.confirmacao {
+
+    max-width: 600px;
+
+    margin: 50px auto;
+
+    padding: 40px 30px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.icone-sucesso {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: #e8f5e9;
+
+    color: #2e7d32;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+}
+
+
+.confirmacao h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.numero-protocolo {
+
+    margin: 25px 0;
+
+    padding: 18px;
+
+    background-color: #f0f6fb;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #0B5FA5;
+
+    letter-spacing: 1px;
+
+}
+
+
+.orientacao {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+.botoes-confirmacao {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn-secundario {
+
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    background-color: #e9ecef;
+
+    color: #333;
+
 }
