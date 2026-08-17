@@ -72,15 +72,12 @@
 
 <script>
 
-    const parametros = new URLSearchParams(
-        window.location.search
-    );
-
     const protocolo =
-        parametros.get("protocolo");
+        sessionStorage.getItem("protocolo");
 
     const campoProtocolo =
         document.getElementById("protocolo");
+
 
     if (protocolo) {
 

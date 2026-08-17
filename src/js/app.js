@@ -35,7 +35,9 @@ const formulario = document.querySelector("form");
 const campoNome = document.getElementById("nome");
 const campoMatricula = document.getElementById("matricula");
 
-formulario.addEventListener("submit", function (evento) {
+formulario.addEventListener("submit", async function (evento) {
+
+    evento.preventDefault();
 
     const nome = campoNome.value.trim();
     const matricula = campoMatricula.value.trim();
@@ -48,6 +50,7 @@ formulario.addEventListener("submit", function (evento) {
     const vereador = document.getElementById("vereador");
     const categoria = document.getElementById("categoria");
     const descricao = document.getElementById("descricao");
+    const botaoEnviar = formulario.querySelector(".btn-enviar");
 
 
     // =========================
@@ -55,8 +58,6 @@ formulario.addEventListener("submit", function (evento) {
     // =========================
 
     if (nome === "" && matricula === "") {
-
-        evento.preventDefault();
 
         alert("Informe o nome ou a matrícula para continuar.");
 
@@ -75,8 +76,6 @@ formulario.addEventListener("submit", function (evento) {
         departamento.value === ""
     ) {
 
-        evento.preventDefault();
-
         alert("Selecione o departamento ou setor.");
 
         departamento.focus();
@@ -94,8 +93,6 @@ formulario.addEventListener("submit", function (evento) {
         vereador.value.trim() === ""
     ) {
 
-        evento.preventDefault();
-
         alert("Informe o nome do vereador.");
 
         vereador.focus();
@@ -109,8 +106,6 @@ formulario.addEventListener("submit", function (evento) {
     // =========================
 
     if (categoria.value === "") {
-
-        evento.preventDefault();
 
         alert("Selecione o tipo de problema ou solicitação.");
 
@@ -126,13 +121,101 @@ formulario.addEventListener("submit", function (evento) {
 
     if (descricao.value.trim() === "") {
 
-        evento.preventDefault();
-
         alert("Descreva o problema ou a solicitação.");
 
         descricao.focus();
 
         return;
+    }
+
+
+    // =========================
+    // ENVIO
+    // =========================
+
+    botaoEnviar.disabled = true;
+    botaoEnviar.textContent = "Enviando...";
+
+
+    const dados = {
+
+    nome: nome,
+
+    matricula: matricula,
+
+    tipoUnidade: tipoUnidade,
+
+    departamento: departamento.value,
+
+    vereador: vereador.value.trim(),
+
+    categoria: categoria.value,
+
+    descricao: descricao.value.trim(),
+
+    anexo: ""
+
+};
+
+
+    const urlAppsScript =
+        "https://script.google.com/macros/s/AKfycbzeHsxMdHv2oY445JWaICQ7o3w9qMmTwJjkvNecWOa0qeoQhSqMTFcN-7IlliAIhTGY-g/exec";
+
+
+    try {
+
+        const resposta = await fetch(
+    urlAppsScript,
+    {
+        method: "POST",
+        redirect: "follow",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(dados)
+    }
+);
+
+
+        const resultado = await resposta.json();
+
+
+        if (!resultado.sucesso) {
+
+            throw new Error(
+                resultado.mensagem ||
+                "Não foi possível registrar o chamado."
+            );
+
+        }
+
+
+        // Guarda o protocolo para a próxima página
+
+        sessionStorage.setItem(
+            "protocolo",
+            resultado.protocolo
+        );
+
+
+        // Vai para a tela de confirmação
+
+        window.location.href =
+            "confirmar-chamado.html";
+
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert(
+            "Não foi possível registrar o chamado.\n\n" +
+            erro.message
+        );
+
+        botaoEnviar.disabled = false;
+        botaoEnviar.textContent = "Enviar Chamado";
+
     }
 
 });
