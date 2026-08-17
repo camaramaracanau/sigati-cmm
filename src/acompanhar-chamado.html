@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhar Chamado - SIGATI-CMM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>Sistema Integrado de Gestão de Atendimento de TI</p>
+
+</header>
+
+<main>
+
+    <section class="confirmacao">
+
+        <h2>Acompanhar Chamado</h2>
+
+        <p class="orientacao">
+            Informe o número do protocolo para consultar
+            o andamento do seu chamado.
+        </p>
+
+        <form id="formConsulta">
+
+            <label for="protocolo">
+                Número do protocolo
+            </label>
+
+            <input
+                type="text"
+                id="protocolo"
+                name="protocolo"
+                placeholder="Ex.: SIGATI-2026-000020"
+                autocomplete="off"
+                required>
+
+            <button
+                type="submit"
+                class="btn-enviar">
+                Consultar Chamado
+            </button>
+
+        </form>
+
+        <div
+    id="resultado"
+    class="resultado-chamado"
+    style="display: none;">
+
+    <h3>Chamado encontrado</h3>
+
+    <div class="numero-protocolo">
+        <span id="resultadoProtocolo"></span>
+    </div>
+
+    <div class="informacao-chamado">
+
+        <div class="campo-resultado">
+
+            <span class="rotulo">
+                Data de abertura
+            </span>
+
+            <span id="resultadoDataAbertura">
+                -
+            </span>
+
+        </div>
+
+        <div class="campo-resultado">
+
+            <span class="rotulo">
+                Categoria
+            </span>
+
+            <span id="resultadoCategoria">
+                -
+            </span>
+
+        </div>
+
+        <div class="campo-resultado">
+
+            <span class="rotulo">
+                Status
+            </span>
+
+            <span
+                id="resultadoStatus"
+                class="status-chamado">
+                -
+            </span>
+
+        </div>
+
+        <div class="campo-resultado mensagem">
+
+            <span class="rotulo">
+                Mensagem da TI
+            </span>
+
+            <span id="resultadoMensagem">
+                -
+            </span>
+
+        </div>
+
+        <div
+            id="campoDataConclusao"
+            class="campo-resultado"
+            style="display: none;">
+
+            <span class="rotulo">
+                Data de conclusão
+            </span>
+
+            <span id="resultadoDataConclusao">
+                -
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <div class="botoes-confirmacao">
+
+            <a
+                href="index.html"
+                class="btn-secundario">
+                ← Voltar para o início
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/consulta.js"></script>
+
+</body>
+
+</html>
