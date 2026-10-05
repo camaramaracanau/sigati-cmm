@@ -161,7 +161,7 @@ formularioLogin.addEventListener(
             } else {
 
                 window.location.href =
-                    "painel-usuario.html";
+                    "abrir-chamado.html";
 
             }
 
