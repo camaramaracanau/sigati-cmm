@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciar Usuários - SIGATI-CMM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>
+        Gerenciamento de Usuários
+    </p>
+
+</header>
+
+
+<main>
+
+    <section class="painel">
+
+        <div class="cabecalho-painel">
+
+            <div>
+
+                <h2>
+                    Gerenciar Usuários
+                </h2>
+
+                <p id="usuarioLogado">
+                    Carregando usuário...
+                </p>
+
+            </div>
+
+            <button
+                id="btnSair"
+                class="btn-secundario">
+                Sair
+            </button>
+
+        </div>
+
+
+        <section class="formulario">
+
+            <h3>
+                Cadastrar Usuário
+            </h3>
+
+
+            <form id="formUsuario">
+
+
+                <label for="usuario">
+                    Usuário
+                </label>
+
+                <input
+                    type="text"
+                    id="usuario"
+                    required
+                    autocomplete="off">
+
+
+                <label for="nome">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    required>
+
+
+                <label for="matricula">
+                    Matrícula
+                </label>
+
+                <input
+                    type="text"
+                    id="matricula"
+                    required>
+
+
+                <label for="perfil">
+                    Perfil
+                </label>
+
+                <select
+                    id="perfil"
+                    required>
+
+                    <option value="">
+                        Selecione o perfil
+                    </option>
+
+                    <option value="Usuário">
+                        Usuário
+                    </option>
+
+                    <option value="Administrador">
+                        Administrador
+                    </option>
+
+                </select>
+
+
+                <label for="senhaInicial">
+                    Senha inicial
+                </label>
+
+                <input
+                    type="password"
+                    id="senhaInicial"
+                    required
+                    autocomplete="new-password">
+
+
+                <button
+                    type="submit"
+                    class="botao"
+                    id="btnCadastrar">
+
+                    Cadastrar Usuário
+
+                </button>
+
+
+                <div
+                    id="mensagem"
+                    class="mensagem-login"
+                    style="display: none;">
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+        <div class="acoes-chamado">
+
+            <button
+                id="btnVoltar"
+                class="btn-secundario">
+
+                ← Voltar para o painel
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/gerenciar-usuarios.js"></script>
+
+</body>
+
+</html>

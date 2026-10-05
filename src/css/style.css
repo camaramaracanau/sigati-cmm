@@ -457,3 +457,443 @@ input[type="file"] {
     color: #b42318;
 
 }
+
+/* =========================
+   PAINEL ADMINISTRATIVO
+   ========================= */
+
+.painel {
+
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+}
+
+.cabecalho-painel {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+.cabecalho-painel h2 {
+
+    margin-bottom: 5px;
+
+}
+
+.cabecalho-painel p {
+
+    margin: 0;
+
+    color: #666;
+
+}
+
+.cards-resumo {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+.card-resumo {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.numero-resumo {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #0B5FA5;
+
+}
+
+.titulo-resumo {
+
+    color: #666;
+
+}
+
+.lista-painel {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.08);
+
+}
+
+.lista-painel h3 {
+
+    margin-top: 0;
+
+}
+
+/* =========================
+   TABELA DE CHAMADOS
+========================= */
+
+.lista-chamados {
+    width: 100%;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-chamados {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;
+}
+
+.tabela-chamados th,
+.tabela-chamados td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabela-chamados th {
+    font-weight: 700;
+    color: #333;
+    white-space: nowrap;
+}
+
+.tabela-chamados td {
+    color: #444;
+    vertical-align: middle;
+}
+
+.tabela-chamados tbody tr {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tabela-chamados tbody tr:hover {
+    background: #f5f7fa;
+}
+
+.tabela-chamados th:nth-child(1),
+.tabela-chamados td:nth-child(1) {
+    white-space: nowrap;
+    min-width: 150px;
+}
+
+.tabela-chamados th:nth-child(2),
+.tabela-chamados td:nth-child(2) {
+    white-space: nowrap;
+    min-width: 150px;
+}
+
+.tabela-chamados th:nth-child(3),
+.tabela-chamados td:nth-child(3) {
+    min-width: 180px;
+}
+
+.tabela-chamados th:nth-child(4),
+.tabela-chamados td:nth-child(4) {
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.tabela-chamados th:nth-child(5),
+.tabela-chamados td:nth-child(5) {
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.tabela-chamados th:nth-child(6),
+.tabela-chamados td:nth-child(6) {
+    white-space: nowrap;
+    min-width: 130px;
+}
+
+/* =========================
+   DETALHES DO CHAMADO
+   ========================= */
+
+.detalhes-chamado {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+}
+
+
+/* =========================
+   CAMPOS
+   ========================= */
+
+.campo-detalhe {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Campos que ocupam toda a largura */
+
+.campo-detalhe:nth-child(3),
+.campo-detalhe:nth-child(9) {
+    grid-column: 1 / -1;
+}
+
+
+/* Primeiro campo */
+
+.campo-detalhe:first-child {
+    padding-top: 0;
+}
+
+
+/* Último campo */
+
+.campo-detalhe:last-child {
+    border-bottom: none;
+}
+
+
+/* Título do campo */
+
+.campo-detalhe strong {
+    font-size: 12px;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* Valor do campo */
+
+.campo-detalhe span {
+    font-size: 16px;
+    color: #222222;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CABEÇALHO DA PÁGINA
+   ========================= */
+
+.cabecalho-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.cabecalho-pagina h2 {
+    margin-bottom: 5px;
+}
+
+.cabecalho-pagina p {
+    margin-top: 0;
+    color: #666666;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+   ========================= */
+
+.botao-voltar {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .cabecalho-pagina {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detalhes-chamado {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .campo-detalhe {
+        grid-column: 1 / -1 !important;
+    }
+
+    .cabecalho-chamado {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .status-topo {
+        align-items: flex-start;
+    }
+
+    .numero-protocolo {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================
+   STATUS DO CHAMADO
+   ========================= */
+
+.status-chamado {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px !important;
+    font-weight: 600;
+    background: #e8f5e9;
+    color: #2e7d32 !important;
+}
+
+/* =========================
+   CABEÇALHO DO CHAMADO
+   ========================= */
+
+.cabecalho-chamado {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 24px;
+    margin-bottom: 4px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.identificacao-chamado {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.rotulo-protocolo {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666666;
+    letter-spacing: 0.8px;
+}
+
+
+.numero-protocolo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+}
+
+
+.data-abertura {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+.status-topo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+
+.rotulo-status {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666666;
+    letter-spacing: 0.8px;
+}
+
+/* =========================
+   CORES DOS STATUS
+   ========================= */
+
+.status-aberto {
+    background: #e8f5e9;
+    color: #2e7d32 !important;
+}
+
+.status-atendimento {
+    background: #fff8e1;
+    color: #f57f17 !important;
+}
+
+.status-aguardando {
+    background: #e3f2fd;
+    color: #1565c0 !important;
+}
+
+.status-concluido {
+    background: #e8f5e9;
+    color: #1b5e20 !important;
+}
+
+.status-cancelado {
+    background: #ffebee;
+    color: #c62828 !important;
+}
+
+.status-padrao {
+    background: #eeeeee;
+    color: #555555 !important;
+}

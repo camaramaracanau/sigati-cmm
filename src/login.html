@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acesso Administrativo - SIGATI-CMM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>
+        Sistema Integrado de Gestão de Atendimento de Tecnologia da Informação
+    </p>
+
+</header>
+
+<main>
+
+    <section class="confirmacao login">
+
+        <h2>Acesso Administrativo</h2>
+
+        <p class="orientacao">
+            Área restrita à Tecnologia da Informação.
+        </p>
+
+        <form id="formLogin">
+
+            <label for="usuario">
+                Usuário
+            </label>
+
+            <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="Digite seu usuário"
+                autocomplete="username"
+                required>
+
+            <label for="senha">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha"
+                autocomplete="current-password"
+                required>
+
+            <button
+                type="submit"
+                class="btn-enviar">
+                Entrar
+            </button>
+
+        </form>
+
+        <div
+            id="mensagemLogin"
+            class="mensagem-login"
+            style="display: none;">
+        </div>
+
+        <div class="botoes-confirmacao">
+
+            <a
+                href="index.html"
+                class="btn-secundario">
+                ← Voltar para o início
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo - SIGATI-CMM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SIGATI-CMM</h1>
+
+    <p>
+        Painel Administrativo da Tecnologia da Informação
+    </p>
+
+</header>
+
+<main>
+
+    <section class="painel">
+
+        <div class="cabecalho-painel">
+
+            <div>
+
+                <h2>
+                    Painel Administrativo
+                </h2>
+
+                <p id="usuarioLogado">
+                    Carregando usuário...
+                </p>
+
+            </div>
+
+            <button
+                id="btnSair"
+                class="btn-secundario">
+                Sair
+            </button>
+
+        </div>
+
+        <div class="botoes">
+
+    <a
+        href="gerenciar-usuarios.html"
+        class="botao">
+
+        👥 Gerenciar Usuários
+
+    </a>
+
+</div>
+
+        <div class="cards-resumo">
+
+            <div class="card-resumo">
+
+                <span
+                    id="totalAbertos"
+                    class="numero-resumo">
+                    0
+                </span>
+
+                <span class="titulo-resumo">
+                    Abertos
+                </span>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span
+                    id="totalAtendimento"
+                    class="numero-resumo">
+                    0
+                </span>
+
+                <span class="titulo-resumo">
+                    Em atendimento
+                </span>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span
+                    id="totalConcluidos"
+                    class="numero-resumo">
+                    0
+                </span>
+
+                <span class="titulo-resumo">
+                    Concluídos
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <section class="lista-painel">
+
+    <h3>
+        Chamados
+    </h3>
+
+    <div
+        id="listaChamados"
+        class="lista-chamados"
+    >
+
+        <p>
+            Carregando chamados...
+        </p>
+
+    </div>
+
+</section>
+
+    </section>
+
+</main>
+
+<script src="js/painel.js"></script>
+
+</body>
+
+</html>

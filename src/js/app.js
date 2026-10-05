@@ -1,3 +1,22 @@
+// =========================
+// VERIFICA LOGIN
+// =========================
+
+const token =
+    sessionStorage.getItem("token");
+
+if (!token) {
+
+    sessionStorage.setItem(
+        "paginaDestino",
+        "index.html"
+    );
+
+    window.location.href =
+        "login.html";
+
+}
+
 const tiposUnidade = document.querySelectorAll(
     'input[name="tipoUnidade"]'
 );
@@ -32,15 +51,11 @@ tiposUnidade.forEach(function (opcao) {
 
 const formulario = document.querySelector("form");
 
-const campoNome = document.getElementById("nome");
-const campoMatricula = document.getElementById("matricula");
 
 formulario.addEventListener("submit", async function (evento) {
 
     evento.preventDefault();
 
-    const nome = campoNome.value.trim();
-    const matricula = campoMatricula.value.trim();
 
     const tipoUnidade = document.querySelector(
         'input[name="tipoUnidade"]:checked'
@@ -53,20 +68,7 @@ formulario.addEventListener("submit", async function (evento) {
     const botaoEnviar = formulario.querySelector(".btn-enviar");
 
 
-    // =========================
-    // VALIDAÇÃO DO SERVIDOR
-    // =========================
-
-    if (nome === "" && matricula === "") {
-
-        alert("Informe o nome ou a matrícula para continuar.");
-
-        campoNome.focus();
-
-        return;
-    }
-
-
+    
     // =========================
     // VALIDAÇÃO DA UNIDADE
     // =========================
@@ -139,9 +141,6 @@ formulario.addEventListener("submit", async function (evento) {
 
     const dados = {
 
-    nome: nome,
-
-    matricula: matricula,
 
     tipoUnidade: tipoUnidade,
 
@@ -153,7 +152,9 @@ formulario.addEventListener("submit", async function (evento) {
 
     descricao: descricao.value.trim(),
 
-    anexo: ""
+    anexo: "",
+
+    token: sessionStorage.getItem("token")
 
 };
 
